@@ -1,0 +1,12 @@
+[
+  {
+    "title": "televisor",
+    "price": 2000,
+    "id": 1
+  },
+  {
+    "title": "nevera",
+    "price": 1600,
+    "id": 2
+  }
+]
