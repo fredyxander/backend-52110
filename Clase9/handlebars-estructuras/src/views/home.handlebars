@@ -1,0 +1,14 @@
+<h1>Pagina principal</h1>
+<div>
+    <p>Bienvenido {{user.nombre}}</p>
+    {{#if isAdmin}}
+        <h2>Listado de alimentos</h2>
+        <ul>
+            {{#each food}}
+                <li>Nombre: {{this.name}}  -  Precio:{{this.price}} </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p>No tienes acceso a esta informacion</p>
+    {{/if}}
+</div>
