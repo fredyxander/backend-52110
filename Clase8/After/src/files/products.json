@@ -1,0 +1,20 @@
+[
+  {
+    "title": "lapiz",
+    "description": "lapiz de color negro",
+    "price": 200,
+    "code": "LX10",
+    "status": true,
+    "thumbnail": "https://st.depositphotos.com/1741875/1378/i/450/depositphotos_13784614-stock-photo-pencil-isolated-on-pure-white.jpg",
+    "id": 1
+  },
+  {
+    "title": "regla",
+    "description": "regla escolar",
+    "price": 250,
+    "code": "RT10",
+    "status": true,
+    "thumbnail": "https://img.freepik.com/premium-vector/set-colourful-rulers-art-measurement-office-supplies-school-stationery-illustration-white_73948-96.jpg?w=740",
+    "id": 2
+  }
+]
