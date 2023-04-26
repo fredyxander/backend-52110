@@ -1,0 +1,14 @@
+[
+  {
+    "user": "fredy",
+    "message": "primer mensaje"
+  },
+  {
+    "user": "fredy",
+    "message": "segundo mensaje"
+  },
+  {
+    "user": "juan",
+    "message": "hola fredy"
+  }
+]
