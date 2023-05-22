@@ -12,6 +12,10 @@ class UserManager{
             const newUser = {
                 email:user.email,
                 password:crypto.createHmac("sha256",this.#secret).update(user.password).digest('hex')
+                //secret:Es la clave que usó para crear la encriptación, sin la clave no será posible saber cuál era el texto original.
+                //sha256: El argoritmo matematico que usa cripto para desencriptar
+                //con update definimos qué palabra queremos encriptar.
+                //digest: define la salida del dato encriptado-texto en hexadecimal
             }
             if(fs.existsSync(this.path)){
                 const contenido = await fs.promises.readFile(this.path,"utf-8");

@@ -1,7 +1,7 @@
 // const numeroAleatorio = Math.ceil(Math.random()*20);//1-20
 // console.log("numeroAleatorio: ", numeroAleatorio);
 
-//Formas de verificar si una clave dentro de un objeto.
+//Formas de verificar si una clave está dentro de un objeto.
 let obj = {1:10,2:30};
 //1 forma: obj.hasOwnProperty(3)
 // if(obj[3]){
