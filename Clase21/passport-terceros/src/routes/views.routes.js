@@ -1,0 +1,33 @@
+import { Router } from "express";
+
+const router = Router();
+
+{/* <a href="/">Inicio</a>
+<a href="/login">Login</a>
+<a href="/signup">Registro</a>
+<a href="/profile">Perfil</a> */}
+
+//rutas de las vistas
+router.get("/", (req,res)=>{
+    res.render("home");
+});
+
+router.get("/login", (req,res)=>{
+    res.render("login");
+});
+
+router.get("/signup", (req,res)=>{
+    res.render("registro");
+});
+
+router.get("/profile", (req,res)=>{
+    if(req.user){
+        console.log(req.user)
+        return res.render("perfil",{email:req.user.email});
+    } else {
+        res.redirect("/login")
+    }
+
+});
+
+export { router as viewsRouter};
