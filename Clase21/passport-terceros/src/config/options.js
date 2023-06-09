@@ -7,6 +7,6 @@ export const options = {
         port:8080
     },
     mongo:{
-        url:"RUTA MONGO URL"
+        url:"RUTA DE LA BASE DE DATOS"
     }
 }
