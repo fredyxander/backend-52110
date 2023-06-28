@@ -4,7 +4,7 @@ export class MongoSingleton{
     static #instance;
 
     constructor(){
-        mongoose.connect("mongodb+srv://fredy:coder@coderbackend.d0kaklh.mongodb.net/singletonDB?retryWrites=true&w=majority");
+        mongoose.connect("URL MONGO DB");
     };
 
     static async getInstance(){
