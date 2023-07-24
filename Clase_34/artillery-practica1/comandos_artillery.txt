@@ -1,0 +1,6 @@
+simulando 2000 peticiones a la ruta http://localhost:8080/sencilla:
+artillery quick --count 40 -n 50 "http://localhost:8080/sencilla" > resultados_sencilla.json
+
+
+simulando 2000 peticiones a la ruta http://localhost:8080/compleja:
+artillery quick --count 40 -n 50 "http://localhost:8080/compleja" > resultados_compleja.json

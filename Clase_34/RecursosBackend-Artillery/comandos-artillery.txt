@@ -1,0 +1,4 @@
+artillery run config.yml --output testPerformance.json
+
+generar reporte
+artillery report testPerformance.json -o testResults.html
