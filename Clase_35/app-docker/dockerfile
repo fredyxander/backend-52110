@@ -1,0 +1,19 @@
+FROM node
+
+# Crear carpeta interna dentro del contenedor donde estara el proyecto
+WORKDIR /app
+
+# copiar el package.json dentro de la carpeta creada
+COPY package*.json ./
+
+#Una vez copiamos el package.json, instalamos dependencias
+RUN npm install
+
+# Copiamos los archivos restantes del proyecto a la carpeta del contenedor
+COPY . .
+
+# Definimos el puerto para ejecutar la aplicacion
+EXPOSE 8080
+
+#Ejecutamos la aplicacion dentro del contenedor
+CMD ["npm","start"]
