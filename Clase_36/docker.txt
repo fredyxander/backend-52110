@@ -1,0 +1,12 @@
+Autenticarse en docker:
+docker login
+
+<username>/imagen:version
+nombreUsuario/userscreatorcoder:1.0.0
+
+Cambiar el nombre de la imagen para subirla al repositorio de imagenes dockerhub
+docker tag userscreatorcoder nombreUsuario/userscreatorcoder:1.0.0
+
+
+subir la imagen al repositorio:
+docker push nombreUsuario/userscreatorcoder:1.0.0
