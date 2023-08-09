@@ -14,6 +14,7 @@ import { viewsRouter } from "./routes/views.routes.js";
 import { sessionsRouter } from "./routes/sessions.routes.js";
 import {productsRouter} from "./routes/products.routes.js";
 import {cartsRouter} from "./routes/carts.routes.js";
+import { usersRouter } from "./routes/users.routes.js";
 
 const port = config.server.port;
 const app =express();
@@ -50,3 +51,4 @@ app.use(viewsRouter);
 app.use("/api/sessions", sessionsRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/carts", cartsRouter);
+app.use("/api/users", usersRouter);

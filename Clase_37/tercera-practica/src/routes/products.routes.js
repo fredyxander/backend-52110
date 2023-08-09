@@ -6,6 +6,7 @@ const router = Router();
 
 router.get("/", ProductsController.getProducts);
 router.get("/:pid", ProductsController.getProduct);
-router.post("/", checkUserAuthenticatedView, checkRoles(["admin","superadmin"]), ProductsController.createProduct);
+router.post("/", checkUserAuthenticatedView, checkRoles(["admin","premium"]), ProductsController.createProduct);
+router.delete("/:pid",checkUserAuthenticatedView,checkRoles(["admin","premium"]), ProductsController.deleteProduct);
 
 export { router as productsRouter};

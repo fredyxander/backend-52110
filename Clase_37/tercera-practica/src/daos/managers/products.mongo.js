@@ -35,4 +35,13 @@ export class ProductsMongo{
             throw error;
         }
     };
+
+    async deleteProduct(productId){
+        try {
+            await this.model.findByIdAndDelete(productId);
+            return "Producto eliminado";
+        } catch (error) {
+            throw error;
+        }
+    };
 };

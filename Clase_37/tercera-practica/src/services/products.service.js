@@ -12,4 +12,8 @@ export class ProductsService{
     static async createProduct(productInfo){
         return productsDao.createProduct(productInfo);
     };
+
+    static async deleteProduct(productId){
+        return productsDao.deleteProduct(productId);
+    };
 };
