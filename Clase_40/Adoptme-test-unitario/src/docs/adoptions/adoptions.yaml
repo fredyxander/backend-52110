@@ -1,0 +1,41 @@
+paths:
+  /api/adoptions/{uid}/{pid}:
+    post:
+      summary: Ruta para adoptar la mascota
+      tags:
+        - Adopciones
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          description: id del usuario que quiere adoptar la mascota
+          schema:
+            $type: string
+        - name: pid
+          in: path
+          required: true
+          description: id de la mascota que se desea adoptar
+          schema:
+            $type: string
+      responses:
+        "200":
+          description: Mascota adoptada
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/SuccessAdopted"
+        "500":
+          description: Error del servidor
+
+components:
+  schemas:
+    SuccessAdopted:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      example:
+        status: success
+        message: Pet adopted

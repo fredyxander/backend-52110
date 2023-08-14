@@ -1,0 +1,59 @@
+paths:
+  /api/sessions/login:
+    post:
+      summary: Ruta para iniciar sesion
+      tags:
+        - Autenticación
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#components/requestBodies/LoginUser"
+      responses:
+        "200":
+          description: "Login exitoso"
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/LoginSuccess"
+        "500":
+          description: "Error del servidor"
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/LoginError"
+
+components:
+  requestBodies:
+    LoginUser:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: "pepe@gmail.com"
+        password: "coder"
+  schemas:
+    LoginSuccess:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      example:
+        status: "success"
+        message: "login exitoso"
+    LoginError:
+      type: object
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+      example:
+        status: "error"
+        message: "Hubo un error al loguear al usuario"

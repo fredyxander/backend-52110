@@ -1,0 +1,32 @@
+paths:
+  /api/users/profile:
+    get:
+      summary: Obtener perfil del usuario
+      tags:
+        - Usuarios
+      security:
+        - sessionAuth: []
+      responses:
+        "200":
+          description: "Se obtiene el perfil del usuario correctamente"
+        "401":
+          description: "No autorizado"
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/AuthError"
+        "500":
+          description: "Error del servidor"
+
+components:
+  schemas:
+    AuthError:
+      type: object
+      properties:
+        status:
+          type: string
+        messgae:
+          type: string
+      example:
+        status: "error"
+        "message": "Debes estar autenticado"
