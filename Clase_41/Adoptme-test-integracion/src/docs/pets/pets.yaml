@@ -1,0 +1,97 @@
+paths:
+  /api/pets:
+    get:
+      summary: Ruta para obtener todas las mascotas
+      tags:
+        - Mascotas
+      responses:
+        "200":
+          description: Se obtuvieron las mascotas correctamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#components/schemas/Pet"
+        "500":
+          description: Error en el servidor
+    post:
+      summary: Ruta para crear la mascota
+      tags:
+        - Mascotas
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#components/requestBodies/NewPet"
+      responses:
+        "200":
+          description: Se creo la mascota correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  payload:
+                    $ref: "#components/schemas/Pet"
+        "500":
+          description: Error en el servidor
+
+components:
+  schemas:
+    Pet:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Id generado por la base de datos
+        name:
+          type: string
+          description: Nombre de la mascota
+        specie:
+          type: string
+          description: Especie de la mascota
+        birthDate:
+          type: string
+          description: Fecha de nacimiento de la mascota
+        adopted:
+          type: boolean
+          description: Indica si la mascota fue adoptada
+        owner:
+          type: ObjectId
+          description: Id del usuario que adopto la mascota
+        image:
+          type: string
+          description: Foto de la mascota
+      example:
+        _id: ObjectId("kjasd18923asd")
+        name: Toby
+        specie: Perro
+        birthDate: "2020-05-12T00:00:00.000+00:00"
+        adopted: true
+        owner: "kjasd9182hjsgda"
+        image: "www.images.com/toby.jpg"
+  requestBodies:
+    NewPet:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Nombre de la mascota
+        specie:
+          type: string
+          description: Especie de la mascota
+        birthDate:
+          type: string
+          description: Fecha de nacimiento de la mascota
+        image:
+          type: string
+          description: Foto de la mascota
+      example:
+        name: Toby
+        specie: Perro
+        birthDate: "2020-05-19"
+        image: "www.images.com/toby.jpg"
